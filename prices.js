@@ -8,7 +8,7 @@ function boom() {
 }
 
 function sellprice(recomended, discount) {
-  discount = discount % 100;
+  discount = discount / 100;
   let normal;
   let lownormal;
   let lastsell;

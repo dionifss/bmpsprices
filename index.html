@@ -4,15 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Precios</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="Prices.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Calculadora de precios Bmps</h1>
-    <label>PVP</label>
-    <input id="recomended" type="number" />
-    <label>Descuento</label>
-    <input id="discount" type="number" />
-    <button onclick="boom()">Click me</button>
+    <div class="header">
+      <h1>Calculadora de precios Bmps</h1>
+    </div>
+    <div class="inputs">
+      <label>PVP</label>
+      <input id="recomended" type="number" placeholder="150€" />
+      <label>Descuento</label>
+      <input id="discount" type="number" placeholder="20%" />
+      <div class="button">
+        <button onclick="boom()">Click me</button>
+      </div>
+    </div>
     <p id="answer"></p>
   </body>
 </html>
