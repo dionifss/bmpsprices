@@ -1,50 +1,49 @@
-console.log("hello1");
 function boom() {
-  console.log("bananan");
-
-  let recomended = document.getElementById("recomended").value;
+  let pvp = document.getElementById("recomended").value;
   let discount = document.getElementById("discount").value;
-  sellprice(recomended, discount);
+  sellprice(pvp, discount);
 }
 
-function sellprice(recomended, discount) {
+function sellprice(pvp, discount) {
   discount = discount / 100;
   let normal;
   let lownormal;
   let lastsell;
-  let ultima;
-  let cuesta = Math.floor((recomended / 2) * (1 - discount) * 100) / 100;
-  if (recomended > 50) {
-    normal = Math.min(recomended * 0.9, recomended * (1 - discount + 0.2));
-    lownormal = Math.floor(recomended * (1 - discount - 0.08) * 10) / 10;
-    lastsell = Math.floor(recomended * (1 - discount - 0.18) * 10) / 10;
-    ultima = Math.floor(recomended * (1 - discount - 0.25) * 10) / 10;
-  } else if (recomended > 15) {
-    normal =
-      Math.floor(
-        Math.min(recomended * 0.95, recomended * (1 - discount + 0.2)) * 100
-      ) / 100;
-    lownormal = Math.floor(recomended * (1 - discount - 0.07) * 10) / 10;
-    lastsell = Math.floor(recomended * (1 - discount - 0.16) * 10) / 10;
-    ultima = Math.floor(recomended * (1 - discount - 0.23) * 10) / 10;
+  let cuesta = Math.floor((pvp / 2) * (1 - discount) * 100) / 100;
+  if (pvp > 50) {
+    normal = Math.floor(pvp * (1 - 0.375 * discount - 0.025) * 10) / 10;
+    lownormal = Math.floor(pvp * (1 - 0.75 * discount - 0.1) * 10) / 10;
+    lastsell = Math.floor(pvp * (1 - 0.75 * discount - 0.15) * 10) / 10;
+  } else if (pvp > 15) {
+    normal = Math.floor(pvp * (1 - 0.35 * discount - 0.01) * 10) / 10;
+    lownormal = Math.floor(pvp * (1 - 0.625 * discount - 0.075) * 10) / 10;
+    lastsell = Math.floor(pvp * (1 - 0.7 * discount - 0.1) * 10) / 10;
   } else {
-    normal =
-      Math.floor(
-        Math.min(recomended, recomended * (1 - discount + 0.2)) * 100
-      ) / 100;
-    lownormal = Math.floor(recomended * (1 - discount) * 100) / 100;
-    lastsell = Math.floor(recomended * (1 - discount - 0.05) * 100) / 100;
-    ultima = Math.floor(recomended * (1 - discount - 0.1) * 100) / 100;
+    normal = Math.floor(pvp * (1 - 0.25 * discount) * 10) / 10;
+    lownormal = Math.floor(pvp * (1 - 0.5 * discount) * 10) / 10;
+    lastsell = Math.floor(pvp * (1 - 0.5 * discount - 0.1) * 10) / 10;
   }
-  document.getElementById(
-    "answer"
-  ).innerHTML = `- Nos cuesta ${cuesta} - con IVA ${
-    Math.floor(cuesta * 1.21 * 100) / 100
-  }.  
-+`;
-  document.querySelector(".pvp").innerHTML = `${recomended}€`;
+  document.querySelector(".pvp").innerHTML = `${pvp}€`;
   document.querySelector(".discount").innerHTML = `${discount * 100}%`;
-  document.querySelector(".salida").innerHTML = `${normal}€`;
-  document.querySelector(".tope").innerHTML = `${lownormal}€`;
-  document.querySelector(".last").innerHTML = `${lastsell}€`;
+  document.querySelector(".salida").innerHTML = `${normal}€ y ganamos ${
+    Math.floor((normal / 1.21 - cuesta) * 10) / 10
+  }€, en porcentaje ${
+    Math.floor(((normal / 1.21 - cuesta) / (normal / 1.21)) * 1000) / 10
+  }%`;
+
+  document.querySelector(".tope").innerHTML = `${lownormal}€  y ganamos ${
+    Math.floor((lownormal / 1.21 - cuesta) * 10) / 10
+  }€, en porcentaje ${
+    Math.floor(((lownormal / 1.21 - cuesta) / (lownormal / 1.21)) * 1000) / 10
+  }%`;
+
+  document.querySelector(".last").innerHTML = `${lastsell}€ y ganamos ${
+    Math.floor((lastsell / 1.21 - cuesta) * 10) / 10
+  }€, en porcentaje ${
+    Math.floor(((lastsell / 1.21 - cuesta) / (lastsell / 1.21)) * 1000) / 10
+  }%`;
+
+  document.querySelector(".cuesta").innerHTML = `${
+    Math.floor(cuesta * 1.21 * 100) / 100
+  }€`;
 }
