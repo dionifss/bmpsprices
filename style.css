@@ -52,3 +52,8 @@ td {
 #salida {
   margin-top: 10%;
 }
+.discounts {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 14px;
+}
