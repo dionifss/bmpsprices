@@ -1,3 +1,4 @@
+console.log("hello");
 function boom() {
   console.log("bananan");
 
@@ -40,7 +41,7 @@ function sellprice(recomended, discount) {
   ).innerHTML = `- Nos cuesta ${cuesta} - con IVA ${
     Math.floor(cuesta * 1.21 * 100) / 100
   }.  
-`;
++`;
   document.querySelector(".pvp").innerHTML = `${recomended}€`;
   document.querySelector(".discount").innerHTML = `${discount * 100}%`;
   document.querySelector(".salida").innerHTML = `${normal}€`;
