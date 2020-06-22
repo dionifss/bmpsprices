@@ -1,4 +1,3 @@
-let recomended = document.getElementById("recomended").value;
 function boom() {
   console.log("bananan");
 
@@ -38,13 +37,13 @@ function sellprice(recomended, discount) {
   }
   document.getElementById(
     "answer"
-  ).innerHTML = `PVPR ${recomended}€ - Descuento ${
-    discount * 100
-  }% - Nos cuesta ${cuesta} - con IVA ${
+  ).innerHTML = `- Nos cuesta ${cuesta} - con IVA ${
     Math.floor(cuesta * 1.21 * 100) / 100
   }.  
-De salida a ${normal}, 
-Bajar a ${lownormal}, 
-Ultra rebaja ${lastsell} 
-Limpiar ultima talla ${ultima}`;
+`;
+  document.querySelector(".pvp").innerHTML = `${recomended}€`;
+  document.querySelector(".discount").innerHTML = `${discount * 100}%`;
+  document.querySelector(".salida").innerHTML = `${normal}€`;
+  document.querySelector(".tope").innerHTML = `${lownormal}€`;
+  document.querySelector(".last").innerHTML = `${lastsell}€`;
 }
