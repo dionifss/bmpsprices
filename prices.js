@@ -1,6 +1,6 @@
 let recomended = document.getElementById("recomended").value;
 function boom() {
-  console.log("banana");
+  console.log("bananan");
 
   let recomended = document.getElementById("recomended").value;
   let discount = document.getElementById("discount").value;
