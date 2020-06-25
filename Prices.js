@@ -25,23 +25,21 @@ function sellprice(pvp, discount) {
   }
   document.querySelector(".pvp").innerHTML = `${pvp}€`;
   document.querySelector(".discount").innerHTML = `${discount * 100}%`;
-  document.querySelector(".salida").innerHTML = `${normal}€ y ganamos ${
-    Math.floor((normal / 1.21 - cuesta) * 10) / 10
-  }€, en porcentaje ${
+  document.querySelector(".salida").innerHTML = `${normal}€en porcentaje ${
     Math.floor(((normal / 1.21 - cuesta) / (normal / 1.21)) * 1000) / 10
   }%`;
+  //  y ganamos ${Math.floor((normal / 1.21 - cuesta) * 10) / 10}€,
 
-  document.querySelector(".tope").innerHTML = `${lownormal}€  y ganamos ${
-    Math.floor((lownormal / 1.21 - cuesta) * 10) / 10
-  }€, en porcentaje ${
+  document.querySelector(".tope").innerHTML = `${lownormal}€  en porcentaje ${
     Math.floor(((lownormal / 1.21 - cuesta) / (lownormal / 1.21)) * 1000) / 10
   }%`;
+  //  y ganamos ${ Math.floor((lownormal / 1.21 - cuesta) * 10) / 10}€,
 
-  document.querySelector(".last").innerHTML = `${lastsell}€ y ganamos ${
-    Math.floor((lastsell / 1.21 - cuesta) * 10) / 10
-  }€, en porcentaje ${
+  document.querySelector(".last").innerHTML = `${lastsell}€  en porcentaje ${
     Math.floor(((lastsell / 1.21 - cuesta) / (lastsell / 1.21)) * 1000) / 10
   }%`;
+
+  //y ganamos ${  Math.floor((lastsell / 1.21 - cuesta) * 10) / 10 }€,
 
   document.querySelector(".cuesta").innerHTML = `${
     Math.floor(cuesta * 1.21 * 100) / 100
